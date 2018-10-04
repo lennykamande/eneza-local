@@ -1,0 +1,11 @@
+---
+#provisioning of specific task on the servers
+#- hosts: all
+ # become: true
+  #roles:
+   # - basic
+
+- hosts: web-servers
+  become: true
+  roles:
+    - web-servers

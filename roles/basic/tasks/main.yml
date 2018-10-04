@@ -1,0 +1,11 @@
+---
+# do an "apt-get update", to ensure latest package lists
+- name: "Updating Nodes"
+  yum: 
+    update-cache: yes
+  changes_when: 0
+# do an installation of base softwares
+- name: "Installation of Base Software"
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - vim 
